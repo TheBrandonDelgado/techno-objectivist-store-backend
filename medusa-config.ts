@@ -15,7 +15,10 @@ module.exports = defineConfig({
   },
   modules: [
     {
-      resolve: "./src/modules/blog"
-    }
-  ]
+      resolve: "./src/modules/blog",
+    },
+    {
+      resolve: "./src/modules/hello",
+    },
+  ],
 })
