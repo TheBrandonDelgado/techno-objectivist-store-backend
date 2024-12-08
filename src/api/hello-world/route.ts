@@ -2,12 +2,18 @@ import type {
     MedusaRequest,
     MedusaResponse,
   } from "@medusajs/framework/http"
+  import myWorkflow from "../../workflows/hello-world"
   
-  export const GET = (
+  export async function GET(
     req: MedusaRequest,
     res: MedusaResponse
-  ) => {
-    res.json({
-      message: "[GET] Hello world!",
-    })
+  ) {
+    const { result } = await myWorkflow(req.scope)
+      .run({
+        input: {
+          name: "Brandon",
+        },
+      })
+  
+    res.send(result)
   }
