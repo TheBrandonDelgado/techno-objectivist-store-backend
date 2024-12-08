@@ -1417,6 +1417,15 @@ export type Post = {
   deleted_at?: Maybe<Scalars['DateTime']['output']>;
 };
 
+export type Brand = {
+  __typename?: 'Brand';
+  id: Scalars['ID']['output'];
+  name: Scalars['String']['output'];
+  created_at: Scalars['DateTime']['output'];
+  updated_at: Scalars['DateTime']['output'];
+  deleted_at?: Maybe<Scalars['DateTime']['output']>;
+};
+
 export type LinkCartPaymentCollection = {
   __typename?: 'LinkCartPaymentCollection';
   cart_id: Scalars['String']['output'];
@@ -1752,6 +1761,8 @@ declare module '@medusajs/framework/types' {
     notifications: Notification
     post: Post
     posts: Post
+    brand: Brand
+    brands: Brand
     cart_payment_collection: LinkCartPaymentCollection
     cart_payment_collections: LinkCartPaymentCollection
     cart_promotion: LinkCartPromotion
